@@ -2,12 +2,31 @@ from tkinter import *
 import time
 from PIL import Image, ImageTk
 
+######################################################
+# VARIÁVEIS
+
+# Largura da barra
+length = 300
+
+# Velocidade da barra
+speed = 8
+
+# ?
+lost = False
+
+# Contagem
+count = 0
+
+######################################################
+
+# Instâncias do Objeto Tk
 root = Tk()
 root.title("Ping Pong")
 root.iconbitmap("Pokeball.ico")
 root.resizable(0, 0)
 root.wm_attributes("-topmost", 1)
 
+# Recebendo o resultado da função Canvas
 canvas = Canvas(root, width=800, height=600, bd=0, highlightthickness=0)
 canvas.pack()
 
@@ -20,14 +39,10 @@ bg_photo = ImageTk.PhotoImage(bg_image)
 #JOGAR A IMAGEM PARA DENTRO DO CANVAS
 canvas.create_image(0, 0, image=bg_photo, anchor=NW)
 
+# ATUALIZAR
 root.update()
 
-
-# CLASSE BARRA
-
-length = 300
-speed = 8
-lost = False
+# CLASSE BARRA ###############################################################
 class Barra:
 
     # CONSTRUTOR
@@ -65,7 +80,7 @@ class Barra:
             self.x = 3
 
 
-# CLASSE BOLA
+# CLASSE BOLA ###############################################################
 class Bola:
     def __init__(self, canvas):
         self.canvas = canvas
