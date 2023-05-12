@@ -25,7 +25,8 @@ root.update()
 
 # CLASSE BARRA
 
-length = 500
+length = 300
+speed = 8
 lost = False
 class Barra:
 
@@ -46,13 +47,14 @@ class Barra:
         if self.position[0] <= 0:
             self.x = 0
 
-        if self.position[2] >= self.canvas_width :
+        if self.position[2] >= self.canvas_width:
             self.x = 0
 
         global lost
 
+        # VELOCIDADE DA BARRA
         if lost == False:
-            self.canvas.after(10, self.draw)
+            self.canvas.after(speed, self.draw)
     def move_left(self, event):
         if self.position[0] >= 0:
             self.x = -3
