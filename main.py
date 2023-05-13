@@ -1,4 +1,6 @@
 from Janela import *
+from Barra import *
+from Bola import *
 
 ######################################
 
