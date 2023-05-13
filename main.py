@@ -7,6 +7,7 @@ def start_game(event):
     barra.draw()
 
 barra = Barra(canvas, length)
+bola = Bola(canvas, Barra)
 canvas.bind_all("<Button-1>", start_game)
 
 root.mainloop()
