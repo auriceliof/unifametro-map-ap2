@@ -1,12 +1,17 @@
-from Janela import *
-from Barra import *
-from Bola import *
+import time
+
+from janela import *
+from barra import *
+from bola import *
 
 ######################################
 
 def start_game(event):
     global lost
+    time.sleep(1)
+    bola.draw()
     barra.draw()
+
 
 barra = Barra(canvas, length)
 bola = Bola(canvas, Barra)
