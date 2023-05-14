@@ -29,7 +29,7 @@ def score():
 
 # Função
 def game_over():
-    canvas.itemconfig(game, text="Game over!")
+    canvas.itemconfig(game, text="Game over!", fill="red")
 #######################################################
 
 
@@ -39,7 +39,7 @@ class Bola:
         # Variáveis
         self.canvas = canvas
         self.Barra = Barra
-        self.id = canvas.create_oval(0, 0, 15, 15, fill=color)
+        self.id = canvas.create_oval(0, 0, 20, 20, fill=color)
         self.canvas.move(self.id, 245, 200)
 
         # Lista
@@ -109,4 +109,4 @@ class Bola:
 
 # Variáveis que recebem o resultado das funções
 game = canvas.create_text(400, 300, text=" ", fill="white", font=("Arial", 40))
-score_now = canvas.create_text(370, 20, text="Você acertou " + str(count)+ "x", fill = "lime", font=("Arial", 20))
+score_now = canvas.create_text(370, 20, text="Você acertou " + str(count)+ "x", fill = "white", font=("Arial", 20))

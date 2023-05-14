@@ -24,8 +24,8 @@ def start_game(event):
     Bola.draw()
 
 # Instâncias dos objetos Barra e Bola
-Barra = Barra(canvas, "olive")
-Bola = Bola(canvas, Barra, "white")
+Barra = Barra(canvas, "blue")
+Bola = Bola(canvas, Barra, "green")
 
 # Variáveis que recebem o resultado das funções
 canvas.bind_all("<Button-1>", start_game)

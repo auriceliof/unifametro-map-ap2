@@ -12,8 +12,8 @@ class Barra:
 
         # Variáveis
         self.canvas = canvas
-        self.id = canvas.create_rectangle(0, 0, length, 10, fill=color)
-        self.canvas.move(self.id, 200, 400)
+        self.id = canvas.create_rectangle(0, 0, length, 15, fill=color)
+        self.canvas.move(self.id, 200, 450)
         self.x = 0
         self.canvas_width = self.canvas.winfo_width()
         self.canvas.bind_all("<KeyPress-Left>", self.move_left)
