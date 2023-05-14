@@ -1,4 +1,36 @@
 import random
+from tkinter import *
+from PIL import Image, ImageTk
+#######################################################
+
+
+# Variável
+count = 0
+
+# Instância do Objeto Tk
+root = Tk()
+root.title("Ping Pong")
+root.resizable(0,0)
+root.wm_attributes("-topmost", 1)
+
+# Variável recebendo o resultado da função Canvas
+canvas = Canvas(root, width=800, height=600, bd=0,highlightthickness=0)
+canvas.pack()
+
+background_image_path = "BGImage.png"  # Substitua pelo caminho da sua imagem de fundo
+bg_image = Image.open(background_image_path)
+bg_photo = ImageTk.PhotoImage(bg_image)
+
+canvas.create_image(0, 0, image=bg_photo, anchor=NW)
+
+root.update()
+def score():
+    canvas.itemconfig(score_now, text="Você acertou " + str(count) + "x")
+
+# Função
+def game_over():
+    canvas.itemconfig(game, text="Game over!")
+#######################################################
 
 
 class Bola:
@@ -56,10 +88,10 @@ class Bola:
                 # Variáveis
                 self.y = -3
                 global count
-                #count += 1
+                count += 1
 
                 # Chamada à função
-                #score()
+                score()
 
         # Condicional if
         if pos[3] <= self.canvas_height:
@@ -69,8 +101,12 @@ class Bola:
         else:
 
             # Chamada à função
-           # game_over()
+            game_over()
 
             # Variáveis
             global lost
             lost = True
+
+# Variáveis que recebem o resultado das funções
+game = canvas.create_text(400, 300, text=" ", fill="white", font=("Arial", 40))
+score_now = canvas.create_text(370, 20, text="Você acertou " + str(count)+ "x", fill = "lime", font=("Arial", 20))
